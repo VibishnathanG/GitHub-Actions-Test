@@ -4,14 +4,15 @@ on:
     branches:
       - master
       - SIT
-environment: testing
 env:
   MONGODB_CLUSTER_ADDRESS: ${{ Secrets.MONGODB_CLUSTER_ADDRESS }}
   MONGODB_USERNAME: ${{ Secrets.MONGODB_USERNAME }}
   MONGODB_PASSWORD: ${{ Secrets.MONGODB_PASSWORD }}
 jobs:
   test:
+    name: Test Job 1
     runs-on: ubuntu-latest
+    environment: testing
     env:
       PORT: ${{ vars.PORT }}
       MONGODB_DB_NAME: "Main-Cluster"
