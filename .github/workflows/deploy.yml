@@ -8,6 +8,7 @@ env:
   MONGODB_CLUSTER_ADDRESS: ${{ Secrets.MONGODB_CLUSTER_ADDRESS }}
   MONGODB_USERNAME: ${{ Secrets.MONGODB_USERNAME }}
   MONGODB_PASSWORD: ${{ Secrets.MONGODB_PASSWORD }}
+  PORT: ${{ vars.PORT }}
 jobs:
   test:
     name: Test Job 1
