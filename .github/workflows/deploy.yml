@@ -41,8 +41,9 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    environment: testing
     steps:
       - name: Output information
         run: |
-          echo "$MONGODB_DB_NAME"
+          echo "$REPO_DATE"
           echo "Job Env"
