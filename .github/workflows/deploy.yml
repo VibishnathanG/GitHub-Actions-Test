@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      PORT: ${{ varibles.PORT }}
+      PORT: ${{ vars.PORT }}
       MONGODB_DB_NAME: "Main-Cluster"
     steps:
       - name: Get Code
