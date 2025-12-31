@@ -6,22 +6,24 @@ on:
       - SIT
 env:
   MONGODB_CLUSTER_ADDRESS: ${{ Secrets.MONGODB_CLUSTER_ADDRESS }}
-  MONGODB_USERNAME: ${{ Secrets.MONGODB_USERNAME }}
+  MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}
   MONGODB_PASSWORD: ${{ Secrets.MONGODB_PASSWORD }}
+  REPO_DATE: ${{ env.REPO_DATE }}
 jobs:
   test:
     name: Test Job 1
     runs-on: ubuntu-latest
     environment: testing
     env:
-      PORT: 3000
+      PORT: ${{ vars.PORT }}
       MONGODB_DB_NAME: "Main-Cluster"
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-      - name: Printing Port
+      - name: Printing Port and date
         run: |
           echo "http://127.0.0.1:$PORT"
+          echo "$REPO_DATE"
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
