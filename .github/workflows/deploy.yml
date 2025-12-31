@@ -6,9 +6,9 @@ on:
       - SIT
 env:
   MONGODB_CLUSTER_ADDRESS: ${{ Secrets.MONGODB_CLUSTER_ADDRESS }}
-  MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}
+  MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
   MONGODB_PASSWORD: ${{ Secrets.MONGODB_PASSWORD }}
-  REPO_DATE: ${{ env.REPO_DATE }}
+  REPO_DATE: ${{ vars.REPO_DATE }}
 jobs:
   test:
     name: Test Job 1
